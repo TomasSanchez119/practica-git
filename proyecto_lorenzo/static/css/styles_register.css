@@ -1,0 +1,87 @@
+@font-face {
+  font-family: "Inter", sans-serif;
+  src: url();
+}
+* {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.btn-atras {
+  position: absolute;
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 25px;
+  height: 25px;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 480px;
+  padding: 20px;
+}
+
+.login-box {
+  background: #171717;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.logo {
+  width: 300px;
+  height: auto;
+  display: block;
+  padding-bottom: 40px;
+  margin: 0 auto;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.rounded-input {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 15px;
+  background-color: #0690cf;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+#rol_id.form-select{
+  font-size: 16px;
+  padding-left: 50px;
+  color: black;
+  padding-top: 10px;
+}
+
+#vacio.form-select {
+  display: none;
+}

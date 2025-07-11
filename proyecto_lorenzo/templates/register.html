@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MelApp - Registro</title>
+    <!-- Enlace a la hoja de estilos específica para la página de registro -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/bootstrap.min.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles_register.css') }}"
+    />
+  </head>
+  <body>
+    <style>
+      /* Estilos para el fondo de la página */
+      body {
+        background-color: black;
+      }
+    </style>
+
+    <!-- Contenedor principal del registro centrado en la pantalla -->
+    <div class="login-container">
+      <div class="login-box">
+        <!-- Logo de la aplicación -->
+        <img
+          src="../static/img/LogoMel.png"
+          alt="Logo de MelApp"
+          class="logo"
+        />
+
+        <!-- Formulario de registro -->
+        <form
+          method="POST"
+          action="{{url_for('user_bp.register')}}"
+          class="login-form"
+          aria-label="Formulario de registro"
+        >
+          <!-- Campo para nombre -->
+          <div class="input-group">
+            <input
+              type="text"
+              name="nombre"
+              placeholder="Nombre completo"
+              class="rounded-input"
+              required
+              aria-required="true"
+              aria-label="Nombre"
+            />
+          </div>
+          <!-- Campo para correo electrónico -->
+          <div class="input-group">
+            <input
+              type="email"
+              name="correo"
+              placeholder="Correo electrónico"
+              class="rounded-input"
+              required
+              aria-required="true"
+              aria-label="Correo electrónico"
+            />
+          </div>
+          <!-- Campo para contraseña -->
+          <div class="input-group">
+            <input
+              type="password"
+              name="contraseña"
+              placeholder="Contraseña"
+              class="rounded-input"
+              required
+              aria-required="true"
+              aria-label="Contraseña"
+            />
+          </div>
+          <!-- Campo para confirmar contraseña -->
+          <div class="input-group">
+            <input
+              type="password"
+              name="confirm_password"
+              placeholder="Confirmar Contraseña"
+              class="rounded-input"
+              required
+              aria-required="true"
+              aria-label="Confirmar Contraseña"
+            />
+          </div>
+          <div class="form-floating mb-4" id="rol-div">
+            <label for="rol_id">Rol:</label>
+            <select id="rol_id" name="rol" required class="form-select">
+              <option value="vacío" id="vacio"></option>
+              {% for rol in roles %}
+              <option value="{{ rol.id }}">{{ rol.role_name }}</option>
+              {% endfor %}
+            </select>
+          </div>
+
+          <!-- Botón para enviar el formulario -->
+          <button type="submit" class="login-btn">Registrarse</button>
+        </form>
+      </div>
+    </div>
+    <!-- Inclusión del archivo JavaScript para manejar interacciones -->
+    <script src="js/script_register.js"></script>
+  </body>
+</html>

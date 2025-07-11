@@ -1,0 +1,114 @@
+@font-face {
+    font-family: "Inter", sans-serif;
+    src: url(../fonts/Inter/static/Inter_28pt-Regular.ttf);
+}
+* {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 480px;
+    padding: 20px;
+}
+
+.login-box {
+    background: #171717;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.logo {
+    width: 300px;
+    height: auto;
+    display: block;
+    padding-bottom: 40px;
+    margin: 0 auto;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.rounded-input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #0690cf;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.login-btn:hover {
+    background-color: #057abf;
+    color: white;
+}
+
+.divider {
+    margin-bottom: 20px;
+    color: #777;
+    position: relative;
+}
+
+.divider::before, .divider::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid #ddd;
+    position: absolute;
+    top: 50%;
+    width: 45%;
+}
+
+.divider::before {
+    right: 55%;
+}
+
+.divider::after {
+    left: 55%;
+}
+
+.links {
+    margin-top: 20px;
+    display: flex;
+    text-align: center;
+    font-display:  bold;
+}
+
+.links a {
+    color: #0690cf;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.links a:hover {
+    color: white;
+}
+
+.register-link{
+    margin-left: 150px;
+}

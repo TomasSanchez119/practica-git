@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MelApp - Inicio de Sesión</title>
+    <!-- Enlace a la hoja de estilos específica para la página de login -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/bootstrap.min.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles_login.css') }}"
+    />
+  </head>
+  <body>
+    <style>
+      /* Estilos para el fondo de la página */
+      body {
+        background-color: black;
+      }
+    </style>
+    <!-- Contenedor principal del login centrado en la pantalla -->
+    <div class="login-container">
+      <div class="login-box">
+        <!-- Logo de la aplicación -->
+        <img src="static\img\LogoMel.png" alt="Logo de MelApp" class="logo" />
+
+        <!-- Formulario de inicio de sesión -->
+        <form
+          method="POST"
+          action="{{url_for('user_bp.login')}}"
+          class="login-form"
+          aria-label="Formulario de inicio de sesión"
+        >
+          <!-- Campo para correo electrónico -->
+          <div class="input-group">
+            <input
+              type="email"
+              name="correo"
+              placeholder="Correo electrónico"
+              class="rounded-input"
+              required
+              aria-required="true"
+              aria-label="Correo electrónico"
+            />
+          </div>
+          <!-- Campo para contraseña -->
+          <div class="input-group">
+            <input
+              type="password"
+              name="contraseña"
+              placeholder="Contraseña"
+              class="rounded-input"
+              required
+              aria-required="true"
+              aria-label="Contraseña"
+            />
+          </div>
+
+          <!-- Botón para enviar el formulario -->
+          <a
+            href="{{url_for('user_bp.casomusica_modificado')}}"
+            class="login-btn btn primary"
+            >Iniciar Sesión</a
+          >
+          <!-- Separador visual -->
+          <div class="divider" aria-hidden="true">o</div>
+
+          <!-- Enlaces para registrarse y recuperar contraseña -->
+          <div class="links">
+            <a href="{{url_for('user_bp.register')}}" class="register-link"
+              >Registrarse</a
+            >
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- Inclusión del archivo JavaScript para manejar interacciones -->
+    <script src="js/script.js"></script>
+  </body>
+</html>

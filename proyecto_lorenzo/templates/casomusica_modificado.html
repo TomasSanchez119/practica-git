@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Música Popular</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='../static/css/bootstrap.min.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='../static/css/styles.css') }}"
+    />
+  </head>
+  <body>
+    <!-- Navbar lateral -->
+    <div class="container-fluid">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasDarkNavbar"
+        aria-controls="offcanvasDarkNavbar"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div
+        class="offcanvas offcanvas-start text-bg-dark"
+        tabindex="-1"
+        id="offcanvasDarkNavbar"
+        aria-labelledby="offcanvasDarkNavbarLabel"
+      >
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Menú</h5>
+          <button
+            type="button"
+            class="btn-close btn-close-white"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Opciones
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark">
+                <li><a class="dropdown-item" href="#">Acción</a></li>
+                <li><a class="dropdown-item" href="#">Otra acción</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="#">Algo más aquí</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex mt-3" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Buscar"
+              aria-label="Search"
+            />
+
+            <button class="btn btn-success" type="submit">Buscar</button>
+          </form>
+        </div>
+      </div>
+
+      <form class="d-flex search-form" role="search">
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Buscar"
+          aria-label="Search"
+        />
+        <button class="btn btn-outline-success" type="submit">Buscar</button>
+      </form>
+    </div>
+
+    <!-- Contenido -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div class="d-flex align-items-center px-3 mt-4" id="header">
+            <h5 class="mb-0">Populares</h5>
+            <a
+              href="{{url_for('GestionarM_bp.listar_albumes')}}"
+              class="btn btn-success btn-sm"
+            >
+              <i class="bi bi-plus-circle me-1"></i> Añadir álbum
+            </a>
+          </div>
+          <hr />
+          <!-- Grupo 1 -->
+          <div class="music-carousel">
+            <div class="card shadow-sm">
+              <img
+                src="{{ url_for('static', filename='img/1.jpg') }}"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body text-center">
+                <p class="card-text">Canción 1</p>
+                <button class="btn btn-danger btn-sm" onclick="borrar(this)">
+                  Borrar
+                </button>
+              </div>
+            </div>
+            <div class="card shadow-sm">
+              <img
+                src="{{url_for('static',filename='img/2.webp')}}"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body text-center">
+                <p class="card-text">Canción 2</p>
+                <button class="btn btn-danger btn-sm" onclick="borrar(this)">
+                  Borrar
+                </button>
+              </div>
+            </div>
+            <div class="card shadow-sm">
+              <img
+                src="{{url_for('static',filename='img/3.webp')}}"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body text-center">
+                <p class="card-text">Canción 3</p>
+                <button class="btn btn-danger btn-sm" onclick="borrar(this)">
+                  Borrar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Grupo 2 -->
+          <div class="music-carousel">
+            <div class="card shadow-sm">
+              <img
+                src="{{url_for('static',filename='img/4.jpg')}}"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body text-center">
+                <p class="card-text">Canción 4</p>
+                <button class="btn btn-danger btn-sm" onclick="borrar(this)">
+                  Borrar
+                </button>
+              </div>
+            </div>
+            <div class="card shadow-sm">
+              <img
+                src="{{url_for('static',filename='img/5.webp')}}"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body text-center">
+                <p class="card-text">Canción 5</p>
+                <button class="btn btn-danger btn-sm" onclick="borrar(this)">
+                  Borrar
+                </button>
+              </div>
+            </div>
+            <div class="card shadow-sm">
+              <img
+                src="{{url_for('static',filename='img/6.jpg')}}"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body text-center">
+                <p class="card-text">Canción 6</p>
+                <button class="btn btn-danger btn-sm" onclick="borrar(this)">
+                  Borrar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Grupo 3 -->
+          <div class="music-carousel">
+            <div class="card shadow-sm">
+              <img
+                src="{{url_for('static',filename='img/7.jpg')}}"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body text-center">
+                <p class="card-text">Canción 7</p>
+                <button class="btn btn-danger btn-sm" onclick="borrar(this)">
+                  Borrar
+                </button>
+              </div>
+            </div>
+            <div class="card shadow-sm">
+              <img
+                src="{{url_for('static',filename='img/8.jpg')}}"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body text-center">
+                <p class="card-text">Canción 8</p>
+                <button class="btn btn-danger btn-sm" onclick="borrar(this)">
+                  Borrar
+                </button>
+              </div>
+            </div>
+            <div class="card shadow-sm">
+              <img
+                src="{{url_for('static',filename='img/9.avif')}}"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body text-center">
+                <p class="card-text">Canción 9</p>
+                <button class="btn btn-danger btn-sm" onclick="borrar(this)">
+                  Borrar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../cliente/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      function borrar(boton) {
+        if (confirm("¿Estás seguro de que deseas borrar esta tarjeta?")) {
+          const card = boton.closest(".card");
+          card.classList.add("fade-out");
+          setTimeout(() => card.remove(), 400);
+        }
+      }
+    </script>
+    <script src="../cliente/js/java.js"></script>
+  </body>
+</html>

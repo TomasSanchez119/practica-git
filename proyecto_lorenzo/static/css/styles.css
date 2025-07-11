@@ -1,0 +1,186 @@
+.row {
+    border-radius: 10px;
+}
+
+[class*="col"] {
+    padding: 20px;
+    border-radius: 5px;
+}
+
+* {
+    background-color: #212529;
+    color: white;
+    /* semi-transparent dark gray */
+}
+
+html, body {
+    background-color: #212529;
+    margin: 0;
+    padding: 0;
+}
+
+/* Center the search form and make input longer */
+.search-form {
+    margin: 0 auto;
+    /* center horizontally */
+    width: 50%;
+    /* adjust width as needed */
+}
+
+.search-form input.form-control {
+    width: 100%;
+    /* make input take full width of form */
+}
+
+/* Override search button color in main navbar search form */
+.search-form .btn-outline-success {
+    color: #78C5EF;
+    border-color: #78C5EF;
+}
+
+.search-form .btn-outline-success:hover {
+    background-color: #78C5EF;
+    color: white;
+    border-color: #78C5EF;
+}
+
+.container {
+    background-color: #212529;
+}
+
+/* Music Carousel Styles */
+.music-carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.music-carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    gap: 15px;
+    padding-bottom: 10px;
+}
+
+.music-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.card {
+    flex: 0 0 auto;
+    width: 18rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+    margin: 0;
+    padding: 0;
+    /* Añadido para mejorar el padding general de la tarjeta */
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+}
+.card-body {
+    padding: 1.5rem 1.2rem 1.2rem 1.2rem;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(120, 197, 239, 0.8);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 0 12px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+    user-select: none;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-btn:hover {
+    background-color: #78C5EF;
+}
+
+.prev-btn {
+    left: 5px;
+}
+
+.next-btn {
+    right: 5px;
+}
+
+.music-carousel {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;}
+  
+.music-carousel-container {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    background-color: #212529;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: fill;
+    border-radius: 10px 10px 0 0;
+    padding: 0px;
+}
+
+.card-text {
+    text-align: center;
+    padding: 10px;
+    background: none;
+    color: #212529;
+    font-weight: bold;
+}
+
+
+#header {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 715px;
+}
+
+/* Formularios y contenedores */
+.form-container, .album-info, .empty-state {
+    padding: 2rem 1.5rem !important;
+    border-radius: 15px;
+}
+
+.form-control {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+}
+
+.btn {
+    padding: 0.5rem 1.2rem;
+    font-size: 1rem;
+}
+
+/* Mejorar el espacio entre botones en las tarjetas */
+.card .btn, .card .btn-custom, .card .btn-danger-custom {
+    margin-bottom: 0.4rem;
+}
+.card .btn:last-child {
+    margin-bottom: 0;
+}
